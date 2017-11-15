@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using UniRx;
-using System;
 
 public class HazardBehaviour : MonoBehaviour
 {
-	public void Setup(Hazard hazard, IObservable<Unit> collisions)
+	public void Setup(Hazard hazard, UniRx.IObservable<Unit> collisions)
 	{
 		var height = hazard.Height;
 
