@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Linq;
+using UniRx;
 using UnityEngine;
 
 [TestFixture]
@@ -11,6 +12,7 @@ public class BirdTests
     const float Gravity = -10f;
     const float JumpBoost = 50f;
 
+    IObservable<float> time;
     Bird bird;
     State[] states;
 
@@ -92,7 +94,7 @@ public class BirdTests
 
     void GivenABird()
     {
-        bird = new Bird(InitialPosition, Gravity, JumpBoost);
+        bird = new Bird(time , InitialPosition, Gravity, JumpBoost);
     }
     
     void GivenABirdThatCollidedAWhileAgo()
